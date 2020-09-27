@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.stitec.Myproject.entity.Intervenant;
 import com.stitec.Myproject.service.IntervenantService;
@@ -45,6 +46,17 @@ public class IntervenantController {
 		
 		return "intervenants/intervenant-form";
 	}
+	
+	@GetMapping("/showFormForUpdate")
+	public String showFormForUpdate(@RequestParam("invervenantId") int theId , Model theModel){
+		
+		Intervenant theIntervenant = intervenantService.findById();
+		theModel.addAttribute("intervenant", theIntervenant);
+		
+		return "intervenants/intervenant-form";
+	}
+	
+	
 	
 	//---------------------------------------
 	

@@ -33,6 +33,13 @@ public class intervenantserviceImpl implements IntervenantService {
 		intervenantRepository.save(intervenant);
 		
 	}
+
+
+	@Override
+	public Intervenant findById() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	
