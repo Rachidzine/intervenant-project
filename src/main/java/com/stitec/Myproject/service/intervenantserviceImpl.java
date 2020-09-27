@@ -43,6 +43,15 @@ public class intervenantserviceImpl implements IntervenantService {
 	}
 
 
+	@Override
+	public void deleteById(int theId) {
+		intervenantRepository.deleteById(theId);;
+		
+	}
+
+
+	
+
 	
 	
 	

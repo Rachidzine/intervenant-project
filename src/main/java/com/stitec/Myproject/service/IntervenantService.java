@@ -10,6 +10,7 @@ public interface IntervenantService {
 	
 	public List<Intervenant> findAll();
 	public Optional<Intervenant> findById(int theId);
+	public void deleteById(int theId);
 	public void save(Intervenant intervenant);
 
 }

@@ -57,6 +57,13 @@ public class IntervenantController {
 		return "intervenants/intervenant-form";
 	}
 	
+	@GetMapping("/delete")
+	public String deleteIntervenant(@RequestParam("intervenantId") int theId) {
+		
+		intervenantService.deleteById(theId);
+		return "redirect:/intervenants/list";
+	}
+	
 	
 	
 	//---------------------------------------
@@ -67,4 +74,6 @@ public class IntervenantController {
 		
 		return "redirect:/intervenants/list";
 	}
+	
+	
 }
