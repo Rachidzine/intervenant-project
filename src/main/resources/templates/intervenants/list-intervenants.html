@@ -30,16 +30,22 @@ Add Intervenant</a>
 			</tr>
 		</thead>
 
-		<tbody>
-			<tr th:each="tempIntervenant : ${intervenants}">
-				<td th:text="${tempIntervenant.firstName}">
-				<td th:text="${tempIntervenant.lastName}">
-				<td th:text="${tempIntervenant.email}">
-			</tr>
+			<tbody>
+				<tr th:each="tempIntervenant : ${intervenants}">
+					<td th:text="${tempIntervenant.firstName}">
+					<td th:text="${tempIntervenant.lastName}">
+					<td th:text="${tempIntervenant.email}">
+						<!-- Add update button /link -->
+					<td><a
+						th:href="@{/intervenants/showFormForUpdate(intervenantId=${tempIntervenant.id})}"
+						class="btn btn-info btn-sm">update</a></td>
+				</tr>
 
-		</tbody>
 
-	</table>
+
+			</tbody>
+
+		</table>
 	
 	</div>
 </body>
