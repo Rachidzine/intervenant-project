@@ -1,6 +1,7 @@
 package com.stitec.Myproject.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,10 +37,13 @@ public class intervenantserviceImpl implements IntervenantService {
 
 
 	@Override
-	public Intervenant findById() {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Intervenant> findById(int theId) {
+		
+		return intervenantRepository.findById(theId);
 	}
+
+
+	
 	
 	
 	

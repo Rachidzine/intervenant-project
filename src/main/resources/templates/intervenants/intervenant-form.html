@@ -16,6 +16,7 @@
 	<hr>
 	<p class="h4 mb-4">Save Intervenant</p>
 	<form action="#" th:action="@{/intervenants/save}" th:object="${intervenant}" method="POST">
+	
 	<!-- Add hidden form field to handle update -->
 	<input type="hidden" th:field="*{id}">
 	

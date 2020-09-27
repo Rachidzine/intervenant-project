@@ -1,6 +1,7 @@
 package com.stitec.Myproject.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.scheduling.SchedulingAwareRunnable;
 import org.springframework.stereotype.Controller;
@@ -50,7 +51,7 @@ public class IntervenantController {
 	@GetMapping("/showFormForUpdate")
 	public String showFormForUpdate(@RequestParam("invervenantId") int theId , Model theModel){
 		
-		Intervenant theIntervenant = intervenantService.findById();
+		Optional<Intervenant> theIntervenant = intervenantService.findById(theId);
 		theModel.addAttribute("intervenant", theIntervenant);
 		
 		return "intervenants/intervenant-form";
