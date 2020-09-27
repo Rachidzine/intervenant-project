@@ -24,7 +24,7 @@ public class intervenantserviceImpl implements IntervenantService {
 	@Override
 	public List<Intervenant> findAll() {
 		
-		return intervenantRepository.findAll();
+		return intervenantRepository.findAllByOrderByLastNameAsc();
 	}
 
 	//---------------SAVE---------------------------------
