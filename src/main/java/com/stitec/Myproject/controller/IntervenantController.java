@@ -26,7 +26,7 @@ public class IntervenantController {
 	public String listIntervenants(Model theModel) {
 		List<Intervenant> Intervenants = intervenantService.findAll();
 		theModel.addAttribute("intervenants", Intervenants);
-		return "list-intervenants";
+		return "intervenants/list-intervenants";
 	}
 
 }
