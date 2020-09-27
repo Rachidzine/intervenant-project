@@ -26,6 +26,13 @@ public class intervenantserviceImpl implements IntervenantService {
 		
 		return intervenantRepository.findAll();
 	}
+
+	//---------------SAVE---------------------------------
+	@Override
+	public void save(Intervenant intervenant) {
+		intervenantRepository.save(intervenant);
+		
+	}
 	
 	
 	

@@ -6,5 +6,7 @@ import com.stitec.Myproject.entity.Intervenant;
 
 public interface IntervenantService {
 	public List<Intervenant> findAll();
+	
+	public void save(Intervenant intervenant);
 
 }

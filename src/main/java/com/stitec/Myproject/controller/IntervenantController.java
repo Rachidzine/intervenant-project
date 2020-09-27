@@ -2,9 +2,12 @@ package com.stitec.Myproject.controller;
 
 import java.util.List;
 
+import org.springframework.scheduling.SchedulingAwareRunnable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.stitec.Myproject.entity.Intervenant;
@@ -41,5 +44,14 @@ public class IntervenantController {
 		theModel.addAttribute("intervenant", theIntervenant);
 		
 		return "intervenants/intervenant-form";
+	}
+	
+	//---------------------------------------
+	
+	@PostMapping("/save")
+	public String saveIntervenant(@ModelAttribute("intervenant") Intervenant theIntervenant) {
+		intervenantService.save(theIntervenant);
+		
+		return "redirect:/intervenants/list";
 	}
 }
